@@ -4,6 +4,11 @@ variable "name" {
 }
 
 variable "cidr" {
-  description = "VPC CIDR"
+  description = "VPC CIDR (/16)"
   type        = string
+}
+
+variable "number_of_azs" {
+  description = "Number of availability zones"
+  type        = number
 }
