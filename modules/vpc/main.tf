@@ -1,6 +1,6 @@
 
 resource "random_string" "vpc_id" {
-  length  = 16
+  length  = 12
   special = false
   upper   = false
 }
