@@ -18,6 +18,14 @@ dependency "vpc" {
   mock_outputs_allowed_terraform_commands = ["plan", "validate", "destroy"]
 }
 
+locals {
+  account_vars = read_terragrunt_config(find_in_parent_folders("account.hcl"))
+  settings     = local.account_vars.locals.settings
+
+  cluster_name = local.settings.eks_cluster_name
+}
+
 inputs = {
+  name    = local.cluster_name
   subnets = dependency.vpc.outputs.private_subnets
 }
