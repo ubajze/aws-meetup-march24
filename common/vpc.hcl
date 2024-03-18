@@ -8,5 +8,7 @@ locals {
 }
 
 inputs = {
-  name = local.settings.vpc_name
+  name          = local.settings.vpc_name
+  cidr          = "192.168.0.0/16"
+  number_of_azs = 2
 }
