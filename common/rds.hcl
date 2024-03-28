@@ -16,10 +16,9 @@ dependency "vpc" {
 
 locals {
   account_vars = read_terragrunt_config(find_in_parent_folders("account.hcl"))
-  settings     = local.account_vars.locals.settings
 }
 
 inputs = {
-  name    = local.settings.rds_cluster_name
+  name    = local.account_vars.locals.rds_cluster_name
   subnets = dependency.vpc.outputs.private_subnets
 }

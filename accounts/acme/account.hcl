@@ -1,5 +1,6 @@
 
 locals {
-  account_name = "${basename(get_terragrunt_dir())}"
-  settings     = yamldecode(file("settings.yaml"))
+  vpc_name         = "production"
+  eks_cluster_name = "application-cluster"
+  rds_cluster_name = "database-cluster"
 }
